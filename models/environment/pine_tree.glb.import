@@ -35,7 +35,10 @@ _subresources={
 "nodes": {
 "PATH:Cylinder": {
 "generate/physics": true,
-"physics/shape_type": 0
+"physics/shape_type": 1,
+"primitive/height": 10.0,
+"primitive/position": Vector3(0, 4, 0),
+"primitive/radius": 4.2
 }
 }
 }

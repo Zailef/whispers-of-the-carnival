@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5qjpx5nlavto"]
+[gd_scene load_steps=2 format=3 uid="uid://b180jm6jisq1f"]
 
 [ext_resource type="PackedScene" uid="uid://bpxo74qpyoc82" path="res://models/environment/ground.glb" id="1_ok6i8"]
 
