@@ -1,10 +1,10 @@
-[gd_scene load_steps=55 format=3 uid="uid://dbcs2ke7l76a2"]
+[gd_scene load_steps=57 format=3 uid="uid://dbcs2ke7l76a2"]
 
 [ext_resource type="PackedScene" uid="uid://mwbglbrt5mhq" path="res://scenes/characters/player/player.tscn" id="1_2fspt"]
 [ext_resource type="Script" path="res://scenes/levels/sandbox.gd" id="1_s1iu1"]
 [ext_resource type="PackedScene" uid="uid://drbrebgd4gd5n" path="res://scenes/characters/musician/musician_stall.tscn" id="3_8dt6u"]
 [ext_resource type="PackedScene" uid="uid://bpuevhu8yt47f" path="res://scenes/environment/pillared_wall.tscn" id="3_fhotw"]
-[ext_resource type="PackedScene" uid="uid://b180jm6jisq1f" path="res://scenes/environment/ground.tscn" id="3_nbdf5"]
+[ext_resource type="PackedScene" uid="uid://bpxo74qpyoc82" path="res://models/environment/ground.glb" id="4_4owj8"]
 [ext_resource type="Texture2D" uid="uid://dojo4w6dk6xj2" path="res://models/characters/fortune_teller/fortune.teller_metal-ring.png" id="4_he47l"]
 [ext_resource type="Texture2D" uid="uid://dyfycftqc4gbc" path="res://models/characters/fortune_teller/fortune.teller_purple-canvas.png" id="5_21fh0"]
 [ext_resource type="PackedScene" uid="uid://j7n3jd2qe28s" path="res://scenes/environment/platforms/drop_platform.tscn" id="5_igbqd"]
@@ -71,6 +71,14 @@ albedo_texture = ExtResource("6_ic6e2")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pw2en"]
 albedo_texture = ExtResource("5_21fh0")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2ccar"]
+top_radius = 4.0
+bottom_radius = 4.0
+radial_segments = 12
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5onqh"]
+points = PackedVector3Array(2.03128, -1, 3.34603, 1.67264, -1, -3.46583, -3.58487, -1, 1.19496, 2.43128, 1, -2.77871, 0.238093, -1, -3.82446, -3.47285, 1, 1.15762, -3.82446, -1, 0.238842, 3.70495, 1, 0.230653, 3.46583, -1, 1.67264, -3.35679, 1, 1.62037, 3.46583, -1, -1.67264, 3.35752, 1, 1.62037, -3.35679, 1, -1.62037, -3.47285, 1, -1.15762, -2.03128, -1, 3.34603, -1.9678, 1, -3.24147, 2.86835, -1, 2.50971, -3.46508, -1, -1.67264, 1.9678, 1, -3.24147, 2.77871, 1, 2.43128, 3.35752, 1, -1.62037, -1.62037, 1, 3.35752, -3.58487, -1, -1.19496, 2.50971, -1, -2.86835, -0.231378, 1, -3.70495, -0.231378, 1, 3.70495, 0.238093, -1, 3.82446, 1.62037, 1, 3.35752, 0.230653, 1, 3.70495, -0.238842, -1, -3.82446, -1.67264, -1, -3.46583, 1.67264, -1, 3.46583, 3.24147, 1, -1.9678, -3.70495, 1, 0.231378, -3.34603, -1, 2.03128, 3.82446, -1, 0.238093, -1.62037, 1, -3.35752, 3.24147, 1, 1.9678, -3.34603, -1, -2.03128, 2.03128, -1, -3.34603, -1.9678, 1, 3.24147, -1.67264, -1, 3.46583, 1.62037, 1, -3.35752, -3.24147, 1, -1.9678, 3.34603, -1, -2.03128, 3.34603, -1, 2.03128, -3.82446, -1, -0.238842, 3.70495, 1, -0.231378, 1.9678, 1, 3.24147, -3.24147, 1, 1.9678, -0.238842, -1, 3.82446, 0.230653, 1, -3.70495, -2.03128, -1, -3.34603, 3.82446, -1, -0.238842, -3.46508, -1, 1.67264, -3.70495, 1, -0.231378)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0f6fc"]
 albedo_texture = ExtResource("4_he47l")
@@ -361,7 +369,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -50, 0
 [node name="PillaredWall21" parent="Bounds/TopWall" instance=ExtResource("3_fhotw")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -50, 0, -48)
 
-[node name="Ground" parent="Bounds" instance=ExtResource("3_nbdf5")]
+[node name="Ground" parent="Bounds" instance=ExtResource("4_4owj8")]
 
 [node name="MusicianStall" parent="." node_paths=PackedStringArray("prize_one", "prize_two", "prize_three") instance=ExtResource("3_8dt6u")]
 transform = Transform3D(-0.0618189, 0, -1.49872, 0, 1.5, 0, 1.49872, 0, -0.0618189, 39.9118, 1.48692, 26.09)
@@ -854,9 +862,37 @@ material = SubResource("StandardMaterial3D_0foo8")
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="JumpPuzzleMain"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8794, 0.365113, -4.65325)
 use_collision = true
+collision_mask = 0
 radius = 4.0
 sides = 12
 material = SubResource("StandardMaterial3D_pw2en")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="JumpPuzzleMain/CSGCylinder3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0809283, 9.676)
+mesh = SubResource("CylinderMesh_2ccar")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="JumpPuzzleMain/CSGCylinder3D2/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="JumpPuzzleMain/CSGCylinder3D2/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_5onqh")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="JumpPuzzleMain/CSGCylinder3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.61773, 0.573618, 10.7058)
+mesh = SubResource("CylinderMesh_2ccar")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="JumpPuzzleMain/CSGCylinder3D2/MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="JumpPuzzleMain/CSGCylinder3D2/MeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_5onqh")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="JumpPuzzleMain/CSGCylinder3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.53497, 1.17654, 10.132)
+mesh = SubResource("CylinderMesh_2ccar")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="JumpPuzzleMain/CSGCylinder3D2/MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="JumpPuzzleMain/CSGCylinder3D2/MeshInstance3D3/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_5onqh")
 
 [node name="CSGCylinder3D3" type="CSGCylinder3D" parent="JumpPuzzleMain"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.583, 1.34222, -11.6073)
