@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scenes/levels/sandbox.gd" id="1_s1iu1"]
 [ext_resource type="PackedScene" uid="uid://drbrebgd4gd5n" path="res://scenes/characters/musician/musician_stall.tscn" id="3_8dt6u"]
 [ext_resource type="PackedScene" uid="uid://bpuevhu8yt47f" path="res://scenes/environment/pillared_wall.tscn" id="3_fhotw"]
-[ext_resource type="PackedScene" uid="uid://b180jm6jisq1f" path="res://scenes/environment/ground.tscn" id="3_nbdf5"]
+[ext_resource type="PackedScene" uid="uid://c5qjpx5nlavto" path="res://scenes/environment/ground.tscn" id="3_nbdf5"]
 [ext_resource type="Texture2D" uid="uid://dojo4w6dk6xj2" path="res://models/characters/fortune_teller/fortune.teller_metal-ring.png" id="4_he47l"]
 [ext_resource type="Texture2D" uid="uid://dyfycftqc4gbc" path="res://models/characters/fortune_teller/fortune.teller_purple-canvas.png" id="5_21fh0"]
 [ext_resource type="PackedScene" uid="uid://j7n3jd2qe28s" path="res://scenes/environment/platforms/drop_platform.tscn" id="5_igbqd"]

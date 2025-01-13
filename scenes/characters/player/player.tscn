@@ -77,6 +77,8 @@ height = 1.5
 transform = Transform3D(0.999848, 0, 0.0174524, 0, 1, 0, -0.0174524, 0, 0.999848, 0, 1, 0)
 collision_layer = 2
 script = ExtResource("1_5m5gm")
+player_rotation_speed = null
+collected_cards = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
@@ -175,9 +177,5 @@ script = ExtResource("8_qyltd")
 
 [node name="PlayerModelAnimated" parent="." instance=ExtResource("9_sefjt")]
 transform = Transform3D(-1, 0, -8.75443e-08, 0, 1, 0, 8.75443e-08, 0, -1, -0.000290542, -0.995044, 0.0166451)
-
-[node name="ReadyTimer" type="Timer" parent="."]
-one_shot = true
-autostart = true
 
 [node name="MusicPlayerTransform" type="RemoteTransform3D" parent="."]
