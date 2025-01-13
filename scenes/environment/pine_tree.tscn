@@ -1,22 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkwwkk8mdm2au"]
+[gd_scene load_steps=2 format=3 uid="uid://dkwwkk8mdm2au"]
 
 [ext_resource type="PackedScene" uid="uid://c2cbrdxgw6yei" path="res://models/environment/pine_tree.glb" id="1_sfyhp"]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_k7u7c"]
-points = PackedVector3Array(0.239696, 0.569252, -4.28331, 0.239696, 0.569252, 4.29727, -0.0894538, 0.569252, 4.29727, -0.237139, 9.18905, 0.0069828, -3.72051, 0.402836, -2.30195, 3.87001, 0.238487, 1.32649, -3.72051, 0.402836, 2.15129, -0.914929, -1.08147, 0.666317, 3.70432, 0.402836, -2.30195, 0.899482, 8.65129, 1.16187, -1.24482, 8.65232, 0.666317, 0.569589, 8.81667, -0.981598, -0.749983, 8.81771, -0.816974, 3.70432, 0.402836, 2.31591, 0.0747497, -1.08147, -1.14706, -0.42009, 8.65129, 1.49195, 1.22938, 8.48694, -0.486888, 0.899482, -1.08147, 0.666317, -0.585036, 0.733601, -4.11784, -2.2345, 0.898984, 3.14155, 3.87001, 0.568219, -1.31252, -3.72051, 0.898984, 0.666317, -0.0894538, 0.40387, 4.29727, -0.255143, 0.40387, -4.28331, 3.87001, 0.568219, 1.32649, 2.87958, 0.733601, -2.7975, -3.72051, 0.568219, -2.30195, 1.06443, 8.48694, 1.16187, -3.55482, 0.733601, 2.31675, 1.72421, 0.238487, 3.47163, 0.899482, -1.08147, -0.651511, -2.56514, 0.898984, -2.96212)
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_ejvso"]
-radius = 3.0
-
 [node name="PineTree" instance=ExtResource("1_sfyhp")]
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Cylinder" index="0"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cylinder/StaticBody3D" index="0"]
-shape = SubResource("ConvexPolygonShape3D_k7u7c")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54592, 0)
-shape = SubResource("CylinderShape3D_ejvso")
