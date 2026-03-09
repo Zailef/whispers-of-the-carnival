@@ -1,7 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://q0xqg7cyoond"]
+[gd_scene format=3 uid="uid://q0xqg7cyoond"]
 
 [ext_resource type="Texture2D" uid="uid://1chhar0cvu14" path="res://textures/tarot_cards/wands/Wands01.jpg" id="1_0usmj"]
-[ext_resource type="Script" path="res://scenes/environment/platforms/fire_platform.gd" id="1_g5qm8"]
+[ext_resource type="Script" uid="uid://c7lp0df0dhfsi" path="res://scenes/environment/platforms/fire_platform.gd" id="1_g5qm8"]
 
 [sub_resource type="Gradient" id="Gradient_8pef4"]
 offsets = PackedFloat32Array(0.291045, 0.529851, 0.641791, 0.932836, 0.970149)
@@ -11,8 +11,8 @@ colors = PackedColorArray(0.524505, 0.311791, 0.19022, 1, 0, 0, 0, 1, 0.666081, 
 frequency = 0.0120231
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fr8u6"]
-color_ramp = SubResource("Gradient_8pef4")
 noise = SubResource("FastNoiseLite_oxly1")
+color_ramp = SubResource("Gradient_8pef4")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lopab"]
 
@@ -146,15 +146,15 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_do8l7"]
 _data = {
-"RESET": SubResource("Animation_hs15x"),
-"enflame": SubResource("Animation_3osn5")
+&"RESET": SubResource("Animation_hs15x"),
+&"enflame": SubResource("Animation_3osn5")
 }
 
-[node name="FirePlatform" type="Node3D"]
+[node name="FirePlatform" type="Node3D" unique_id=1404672125]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 script = ExtResource("1_g5qm8")
 
-[node name="Card" type="CSGBox3D" parent="."]
+[node name="Card" type="CSGBox3D" parent="." unique_id=1316356226]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 cast_shadow = 0
 use_collision = true
@@ -162,16 +162,14 @@ collision_mask = 0
 size = Vector3(6, 0.09, 3.5)
 material = SubResource("StandardMaterial3D_cbvx4")
 
-[node name="PlayerDetectionArea" type="Area3D" parent="."]
+[node name="PlayerDetectionArea" type="Area3D" parent="." unique_id=1659605099]
 transform = Transform3D(-6.55671e-08, 0.000277972, -1.5, 0, 1.5, 0.000277972, 1.5, 1.21505e-11, -6.55671e-08, 0, 0, 0)
 collision_layer = 8
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetectionArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetectionArea" unique_id=1189728399]
 transform = Transform3D(1, -5.89806e-17, 1.28964e-12, 0, 1, -3.54068e-19, 0, 3.66708e-09, 1, 0.000347733, 0.029358, -0.00320662)
 shape = SubResource("BoxShape3D_niprw")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_do8l7")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1532962070]
+libraries/ = SubResource("AnimationLibrary_do8l7")

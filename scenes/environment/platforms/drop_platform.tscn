@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://j7n3jd2qe28s"]
+[gd_scene format=3 uid="uid://j7n3jd2qe28s"]
 
 [ext_resource type="Texture2D" uid="uid://xhecuedx1inh" path="res://textures/tarot_cards/pentacles/Pents01.jpg" id="1_famw6"]
-[ext_resource type="Script" path="res://scenes/environment/platforms/drop_platform.gd" id="2_4x6vc"]
+[ext_resource type="Script" uid="uid://bawr1hy313pnx" path="res://scenes/environment/platforms/drop_platform.gd" id="2_4x6vc"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xx562"]
 
@@ -111,41 +111,39 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lioa6"]
 _data = {
-"RESET": SubResource("Animation_dl404"),
-"fade_in": SubResource("Animation_31fjl"),
-"wobble": SubResource("Animation_o4h3b")
+&"RESET": SubResource("Animation_dl404"),
+&"fade_in": SubResource("Animation_31fjl"),
+&"wobble": SubResource("Animation_o4h3b")
 }
 
-[node name="DropPlatform" type="Node3D"]
+[node name="DropPlatform" type="Node3D" unique_id=792606601]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 script = ExtResource("2_4x6vc")
 
-[node name="Card" type="CSGBox3D" parent="."]
+[node name="Card" type="CSGBox3D" parent="." unique_id=89994168]
 cast_shadow = 0
 use_collision = true
 collision_mask = 0
 size = Vector3(6, 0.09, 3.5)
 material = SubResource("StandardMaterial3D_ivfst")
 
-[node name="PlayerDetectionArea" type="Area3D" parent="."]
+[node name="PlayerDetectionArea" type="Area3D" parent="." unique_id=997349408]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0.000277972, 0, -0.000277972, 1.5, 0, 0, 0)
 collision_layer = 8
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetectionArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetectionArea" unique_id=961538588]
 transform = Transform3D(1, -2.1684e-18, 0, 0, 1, 0, 0, 4.36557e-11, 1, 0.00321448, 0.029358, 0.0158047)
 shape = SubResource("BoxShape3D_tk0by")
 
-[node name="DropTimer" type="Timer" parent="."]
+[node name="DropTimer" type="Timer" parent="." unique_id=1685531821]
 wait_time = 2.0
 one_shot = true
 
-[node name="DropResetTimer" type="Timer" parent="."]
+[node name="DropResetTimer" type="Timer" parent="." unique_id=280999274]
 wait_time = 3.0
 one_shot = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=634980432]
 root_node = NodePath("../Card")
-libraries = {
-"": SubResource("AnimationLibrary_lioa6")
-}
+libraries/ = SubResource("AnimationLibrary_lioa6")

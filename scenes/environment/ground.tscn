@@ -1,5 +1,5 @@
-[gd_scene load_steps=2 format=3 uid="uid://b180jm6jisq1f"]
+[gd_scene format=3 uid="uid://b180jm6jisq1f"]
 
 [ext_resource type="PackedScene" uid="uid://bpxo74qpyoc82" path="res://models/environment/ground.glb" id="1_ok6i8"]
 
-[node name="Ground" instance=ExtResource("1_ok6i8")]
+[node name="Ground" unique_id=241984229 instance=ExtResource("1_ok6i8")]

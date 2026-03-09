@@ -1,26 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://bg4gi7b4k2cq0"]
+[gd_scene format=3 uid="uid://bg4gi7b4k2cq0"]
 
 [ext_resource type="PackedScene" uid="uid://bulgdch6f5v8q" path="res://models/characters/musician/Musician.stage.glb" id="1_mf28e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4r6j6"]
 size = Vector3(10.7437, 5.35901, 4.01697)
 
-[node name="MusicianStage" instance=ExtResource("1_mf28e")]
+[node name="MusicianStage" unique_id=183524247 instance=ExtResource("1_mf28e")]
 
-[node name="Spot" parent="." index="16"]
+[node name="Spot" parent="." index="16" unique_id=911283398]
 light_energy = 5.0
 
-[node name="Spot_001" parent="." index="17"]
+[node name="Spot_001" parent="." index="17" unique_id=1613584394]
 light_energy = 5.0
 
-[node name="Spot_002" parent="." index="18"]
+[node name="Spot_002" parent="." index="18" unique_id=2057763405]
 light_energy = 5.0
 
-[node name="Spot_003" parent="." index="19"]
+[node name="Spot_003" parent="." index="19" unique_id=133780056]
 light_energy = 5.0
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="20"]
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="20" unique_id=2899028]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=732627891]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.163422, 1.83258, -0.423645)
 shape = SubResource("BoxShape3D_4r6j6")
