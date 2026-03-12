@@ -1,12 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://bpuevhu8yt47f"]
+[gd_scene format=3 uid="uid://bpuevhu8yt47f"]
 
 [ext_resource type="PackedScene" uid="uid://cx3mohvscbmir" path="res://models/environment/wall.glb" id="1_anmw4"]
 [ext_resource type="PackedScene" uid="uid://bv7m31qxnkc6" path="res://scenes/environment/pillar.tscn" id="2_mhn3p"]
 
-[node name="PillaredWall" instance=ExtResource("1_anmw4")]
+[node name="PillaredWall" unique_id=940931854 instance=ExtResource("1_anmw4")]
 
-[node name="Wall" parent="." index="0"]
+[node name="Wall" parent="." index="0" unique_id=1036694794]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Pillar" parent="." index="1" instance=ExtResource("2_mhn3p")]
+[node name="Pillar" parent="." index="1" unique_id=265254833 instance=ExtResource("2_mhn3p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3, 0, 0)

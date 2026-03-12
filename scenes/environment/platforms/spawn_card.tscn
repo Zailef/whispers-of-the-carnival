@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://k7ls3g4owws8"]
+[gd_scene format=3 uid="uid://k7ls3g4owws8"]
 
 [ext_resource type="Texture2D" uid="uid://dtw6mbm23kxhg" path="res://textures/tarot_cards/major/RWS_Tarot_13_Death.jpg" id="1_6od8w"]
-[ext_resource type="Script" path="res://scenes/environment/platforms/spawn_card.gd" id="1_eeowu"]
+[ext_resource type="Script" uid="uid://ckrgkl6lwx825" path="res://scenes/environment/platforms/spawn_card.gd" id="1_eeowu"]
 [ext_resource type="Material" uid="uid://cf2qbrqmtglua" path="res://materials/spawn_card_active.tres" id="2_kvh1j"]
 [ext_resource type="AudioStream" uid="uid://ca5jndovagbdv" path="res://audio/characters/musician/xylophone/G3.wav" id="4_nkhmh"]
 
@@ -33,10 +33,10 @@ distance_fade_max_distance = 0.0
 [sub_resource type="BoxShape3D" id="BoxShape3D_0ih2y"]
 size = Vector3(2.28444, 0.121216, 3.97114)
 
-[node name="SpawnCard" type="Node3D" groups=["spawn_cards"]]
+[node name="SpawnCard" type="Node3D" unique_id=2108851050 groups=["spawn_cards"]]
 script = ExtResource("1_eeowu")
 
-[node name="Card" type="CSGBox3D" parent="."]
+[node name="Card" type="CSGBox3D" parent="." unique_id=1476299991]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 layers = 2
 material_overlay = ExtResource("2_kvh1j")
@@ -46,18 +46,18 @@ collision_mask = 0
 size = Vector3(6, 0.09, 3.5)
 material = SubResource("StandardMaterial3D_hrmwp")
 
-[node name="PlayerDetectionArea" type="Area3D" parent="."]
+[node name="PlayerDetectionArea" type="Area3D" parent="." unique_id=1557723342]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0.000277972, 0, -0.000277972, 1.5, 0, 0, 0)
 collision_layer = 8
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetectionArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetectionArea" unique_id=356054371]
 transform = Transform3D(1, -2.1684e-18, 0, 0, 1, -4.04543e-09, 0, 4.36557e-11, 1, -0.008268, 0.029358, -0.0174955)
 shape = SubResource("BoxShape3D_0ih2y")
 
-[node name="SpawnPoint" type="Marker3D" parent="."]
+[node name="SpawnPoint" type="Marker3D" parent="." unique_id=216926275]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.045, 0)
 gizmo_extents = 0.0
 
-[node name="SpawnActivatedSound" type="AudioStreamPlayer" parent="."]
+[node name="SpawnActivatedSound" type="AudioStreamPlayer" parent="." unique_id=5299288]
 stream = ExtResource("4_nkhmh")

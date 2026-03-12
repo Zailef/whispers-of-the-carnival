@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnl8mjaummeu4"]
+[gd_scene format=3 uid="uid://bnl8mjaummeu4"]
 
 [ext_resource type="AudioStream" uid="uid://de8fvu07vwjbr" path="res://audio/music/Blue Feather.mp3" id="1_tjw7l"]
-[ext_resource type="Script" path="res://autoloads/menu_music_player.gd" id="2_60dla"]
+[ext_resource type="Script" uid="uid://bo1ajxkwubcp7" path="res://autoloads/menu_music_player.gd" id="2_60dla"]
 
-[node name="MenuMusicPlayer" type="AudioStreamPlayer"]
+[node name="MenuMusicPlayer" type="AudioStreamPlayer" unique_id=2008081517]
 stream = ExtResource("1_tjw7l")
 bus = &"Music"
 script = ExtResource("2_60dla")

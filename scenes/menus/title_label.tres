@@ -1,4 +1,4 @@
-[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://b6q4cwq5qro1g"]
+[gd_resource type="LabelSettings" format=3 uid="uid://b6q4cwq5qro1g"]
 
 [ext_resource type="FontFile" uid="uid://cg76ha3wdiow8" path="res://fonts/Lacquer/Lacquer-Regular.ttf" id="1_8st4q"]
 

@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://tign6pylq6lu"]
+[gd_scene format=3 uid="uid://tign6pylq6lu"]
 
 [ext_resource type="PackedScene" uid="uid://b4a16n7i3021" path="res://models/characters/mushroom_folk.glb" id="1_m0rg2"]
-[ext_resource type="Script" path="res://scenes/characters/mushroom_folk/mushroom_folk.gd" id="2_xish7"]
+[ext_resource type="Script" uid="uid://t636p02uuk17" path="res://scenes/characters/mushroom_folk/mushroom_folk.gd" id="2_xish7"]
 [ext_resource type="PackedScene" uid="uid://2isfaa6wkaj8" path="res://scenes/common/interaction_handler.tscn" id="3_ohe2b"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dm414"]
@@ -11,28 +11,28 @@ points = PackedVector3Array(-0.178541, -1.60184, -1.63595, 0.510443, -1.03743, 1
 height = 3.0
 radius = 1.0
 
-[node name="MushroomFolk" instance=ExtResource("1_m0rg2")]
+[node name="MushroomFolk" unique_id=2071619067 instance=ExtResource("1_m0rg2")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 script = ExtResource("2_xish7")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="0"]
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="0" unique_id=1633466144]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0612786, 3.36013, 0.00707394)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=731583761]
 shape = SubResource("ConvexPolygonShape3D_dm414")
 
-[node name="Cube_008" parent="." index="1"]
+[node name="Cube_008" parent="." index="1" unique_id=1062013295]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0612786, 3.36013, 0.00707394)
 
-[node name="InteractionHandler" parent="." index="2" node_paths=PackedStringArray("interaction_label") instance=ExtResource("3_ohe2b")]
+[node name="InteractionHandler" parent="." index="2" unique_id=1284613135 node_paths=PackedStringArray("interaction_label") instance=ExtResource("3_ohe2b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0035e-07, -0.615564, 1.14787)
 visible = false
 interaction_label = NodePath("Label3D")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionHandler" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionHandler" index="0" unique_id=1473714937]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.02837e-07, 1.632, 0.362012)
 shape = SubResource("CylinderShape3D_rkljb")
 
-[node name="Label3D" type="Label3D" parent="InteractionHandler" index="1"]
+[node name="Label3D" type="Label3D" parent="InteractionHandler" index="1" unique_id=696771063]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.64134e-08, 1.74074, 0.416521)
 text = "Talk [E]"

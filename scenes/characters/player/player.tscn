@@ -1,17 +1,17 @@
-[gd_scene load_steps=25 format=3 uid="uid://mwbglbrt5mhq"]
+[gd_scene format=3 uid="uid://mwbglbrt5mhq"]
 
-[ext_resource type="Script" path="res://scenes/characters/player/player.gd" id="1_5m5gm"]
-[ext_resource type="Script" path="res://scenes/characters/player/player_state_machine.gd" id="2_5tt5k"]
-[ext_resource type="Script" path="res://scenes/characters/player/camera_controller.gd" id="2_gucjo"]
-[ext_resource type="Script" path="res://scenes/characters/player/player_move_state.gd" id="3_gvtl3"]
-[ext_resource type="Script" path="res://scenes/characters/player/screen_flames.gd" id="4_ci6ft"]
-[ext_resource type="Script" path="res://scenes/characters/player/player_idle_state.gd" id="4_o4wn0"]
-[ext_resource type="Script" path="res://scenes/characters/player/player_jump_state.gd" id="5_4suqs"]
-[ext_resource type="Script" path="res://scenes/characters/player/player_hud.gd" id="5_prpu3"]
-[ext_resource type="Script" path="res://scenes/characters/player/player_freeze_state.gd" id="7_ggo65"]
-[ext_resource type="Script" path="res://scenes/characters/player/player_fall_state.gd" id="8_qyltd"]
+[ext_resource type="Script" uid="uid://d1ddjwurnhrff" path="res://scenes/characters/player/player.gd" id="1_5m5gm"]
+[ext_resource type="Script" uid="uid://cx1ob2gyy6hg7" path="res://scenes/characters/player/player_state_machine.gd" id="2_5tt5k"]
+[ext_resource type="Script" uid="uid://0wgr0kpmvklu" path="res://scenes/characters/player/camera_controller.gd" id="2_gucjo"]
+[ext_resource type="Script" uid="uid://b3fvefqrnt678" path="res://scenes/characters/player/player_move_state.gd" id="3_gvtl3"]
+[ext_resource type="Script" uid="uid://cx3iewoyl8ph4" path="res://scenes/characters/player/screen_flames.gd" id="4_ci6ft"]
+[ext_resource type="Script" uid="uid://bfbsyc2ow2l5l" path="res://scenes/characters/player/player_idle_state.gd" id="4_o4wn0"]
+[ext_resource type="Script" uid="uid://xc0xl23awv84" path="res://scenes/characters/player/player_jump_state.gd" id="5_4suqs"]
+[ext_resource type="Script" uid="uid://chsn273ru4isi" path="res://scenes/characters/player/player_hud.gd" id="5_prpu3"]
+[ext_resource type="Script" uid="uid://b41jm5t7mebu1" path="res://scenes/characters/player/player_freeze_state.gd" id="7_ggo65"]
+[ext_resource type="Script" uid="uid://chd6ymg848l2a" path="res://scenes/characters/player/player_fall_state.gd" id="8_qyltd"]
 [ext_resource type="PackedScene" uid="uid://2nu4yl8r3ojc" path="res://models/characters/player/Player.full.ani.glb" id="9_sefjt"]
-[ext_resource type="Shader" path="res://shaders/screen_flames.gdshader" id="11_vwdn8"]
+[ext_resource type="Shader" uid="uid://dab62srbgnvbo" path="res://shaders/screen_flames.gdshader" id="11_vwdn8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_73sg4"]
 radius = 0.4
@@ -45,9 +45,9 @@ domain_warp_fractal_octaves = 10
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_is3bv"]
 width = 1920
 height = 1080
-seamless_blend_skirt = 0.829
-color_ramp = SubResource("Gradient_m2gfx")
 noise = SubResource("FastNoiseLite_hb5l0")
+color_ramp = SubResource("Gradient_m2gfx")
+seamless_blend_skirt = 0.829
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_6bmml"]
 frequency = 0.2
@@ -58,58 +58,58 @@ noise = SubResource("FastNoiseLite_6bmml")
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_d378i"]
 width = 1920
 height = 1080
-color_ramp = SubResource("Gradient_m2gfx")
 noise = SubResource("FastNoiseLite_hb5l0")
+color_ramp = SubResource("Gradient_m2gfx")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hllwc"]
 resource_local_to_scene = true
 shader = ExtResource("11_vwdn8")
-shader_parameter/intensity = 1.0
 shader_parameter/flame1_texture = SubResource("NoiseTexture2D_is3bv")
 shader_parameter/flame2_texture = SubResource("NoiseTexture2D_gao88")
 shader_parameter/flame3_texture = SubResource("NoiseTexture2D_d378i")
 shader_parameter/color_gradient = SubResource("GradientTexture1D_5pmhq")
+shader_parameter/intensity = 1.0
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_t2bme"]
 height = 1.5
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" unique_id=1402975172]
 transform = Transform3D(0.999848, 0, 0.0174524, 0, 1, 0, -0.0174524, 0, 0.999848, 0, 1, 0)
 collision_layer = 2
 script = ExtResource("1_5m5gm")
 player_rotation_speed = null
 collected_cards = null
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2050946769]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
 shape = SubResource("CapsuleShape3D_73sg4")
 
-[node name="CameraController" type="Node3D" parent="."]
+[node name="CameraController" type="Node3D" parent="." unique_id=80827511]
 script = ExtResource("2_gucjo")
 
-[node name="TwistPivot" type="Node3D" parent="CameraController"]
+[node name="TwistPivot" type="Node3D" parent="CameraController" unique_id=769341406]
 transform = Transform3D(0.999848, 0, 0.0174524, 0, 1, 0, -0.0174524, 0, 0.999848, 0, 0, 0)
 
-[node name="PitchPivot" type="Node3D" parent="CameraController/TwistPivot"]
+[node name="PitchPivot" type="Node3D" parent="CameraController/TwistPivot" unique_id=1779616382]
 
-[node name="SpringArm3D" type="SpringArm3D" parent="CameraController/TwistPivot/PitchPivot"]
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraController/TwistPivot/PitchPivot" unique_id=1299562535]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.96475, 0)
 shape = SubResource("CapsuleShape3D_r8qsy")
 spring_length = 6.0
 
-[node name="ThirdPersonCamera" type="Camera3D" parent="CameraController/TwistPivot/PitchPivot/SpringArm3D"]
+[node name="ThirdPersonCamera" type="Camera3D" parent="CameraController/TwistPivot/PitchPivot/SpringArm3D" unique_id=990329144]
 unique_name_in_owner = true
 transform = Transform3D(0.999982, 0.00585071, 0.00100975, -0.00585071, 0.942133, 0.335187, 0.00100976, -0.335187, 0.942151, 0, 0, 0)
 current = true
 
-[node name="SubViewport" type="SubViewport" parent="CameraController/TwistPivot/PitchPivot/SpringArm3D/ThirdPersonCamera"]
+[node name="SubViewport" type="SubViewport" parent="CameraController/TwistPivot/PitchPivot/SpringArm3D/ThirdPersonCamera" unique_id=1580423717]
 transparent_bg = true
 size = Vector2i(1920, 180)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=964548053]
 
-[node name="ScreenFlames" type="ColorRect" parent="CanvasLayer"]
+[node name="ScreenFlames" type="ColorRect" parent="CanvasLayer" unique_id=1884194056]
 material = SubResource("ShaderMaterial_hllwc")
 anchors_preset = 15
 anchor_right = 1.0
@@ -120,16 +120,16 @@ mouse_filter = 2
 color = Color(1, 1, 1, 0.0784314)
 script = ExtResource("4_ci6ft")
 
-[node name="DeathTimer" type="Timer" parent="CanvasLayer/ScreenFlames"]
+[node name="DeathTimer" type="Timer" parent="CanvasLayer/ScreenFlames" unique_id=1111707671]
 wait_time = 0.1
 
-[node name="RecoveryTimer" type="Timer" parent="CanvasLayer/ScreenFlames"]
+[node name="RecoveryTimer" type="Timer" parent="CanvasLayer/ScreenFlames" unique_id=1070213191]
 wait_time = 0.1
 
-[node name="RecoveryDelayTimer" type="Timer" parent="CanvasLayer/ScreenFlames"]
+[node name="RecoveryDelayTimer" type="Timer" parent="CanvasLayer/ScreenFlames" unique_id=101955047]
 wait_time = 1.5
 
-[node name="PlayerHUD" type="MarginContainer" parent="CanvasLayer"]
+[node name="PlayerHUD" type="MarginContainer" parent="CanvasLayer" unique_id=1061151347]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -141,41 +141,41 @@ theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 script = ExtResource("5_prpu3")
 
-[node name="MajorArcanaLabel" type="Label" parent="CanvasLayer/PlayerHUD"]
+[node name="MajorArcanaLabel" type="Label" parent="CanvasLayer/PlayerHUD" unique_id=1882050049]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 text = "Major Arcana Collected: 0/22"
 
-[node name="InteractionProbe" type="Area3D" parent="."]
+[node name="InteractionProbe" type="Area3D" parent="." unique_id=466175282]
 collision_layer = 2
 collision_mask = 4
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionProbe"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionProbe" unique_id=1755998624]
 transform = Transform3D(1, 0, -1.66533e-16, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0130067, -0.289208, -0.745154)
 shape = SubResource("CylinderShape3D_t2bme")
 
-[node name="PlayerStateMachine" type="Node" parent="." node_paths=PackedStringArray("player", "initial_state") groups=["player"]]
+[node name="PlayerStateMachine" type="Node" parent="." unique_id=1531789800 node_paths=PackedStringArray("player", "initial_state") groups=["player"]]
 script = ExtResource("2_5tt5k")
 player = NodePath("..")
 initial_state = NodePath("PlayerIdleState")
 
-[node name="PlayerMoveState" type="Node" parent="PlayerStateMachine"]
+[node name="PlayerMoveState" type="Node" parent="PlayerStateMachine" unique_id=1193241028]
 script = ExtResource("3_gvtl3")
 
-[node name="PlayerIdleState" type="Node" parent="PlayerStateMachine"]
+[node name="PlayerIdleState" type="Node" parent="PlayerStateMachine" unique_id=196758009]
 script = ExtResource("4_o4wn0")
 
-[node name="PlayerJumpState" type="Node" parent="PlayerStateMachine"]
+[node name="PlayerJumpState" type="Node" parent="PlayerStateMachine" unique_id=288018073]
 script = ExtResource("5_4suqs")
 
-[node name="PlayerFreezeState" type="Node" parent="PlayerStateMachine"]
+[node name="PlayerFreezeState" type="Node" parent="PlayerStateMachine" unique_id=1873535580]
 script = ExtResource("7_ggo65")
 
-[node name="PlayerFallState" type="Node" parent="PlayerStateMachine"]
+[node name="PlayerFallState" type="Node" parent="PlayerStateMachine" unique_id=1164018755]
 script = ExtResource("8_qyltd")
 
-[node name="PlayerModelAnimated" parent="." instance=ExtResource("9_sefjt")]
+[node name="PlayerModelAnimated" parent="." unique_id=2146699753 instance=ExtResource("9_sefjt")]
 transform = Transform3D(-1, 0, -8.75443e-08, 0, 1, 0, 8.75443e-08, 0, -1, -0.000290542, -0.995044, 0.0166451)
 
-[node name="MusicPlayerTransform" type="RemoteTransform3D" parent="."]
+[node name="MusicPlayerTransform" type="RemoteTransform3D" parent="." unique_id=334578861]

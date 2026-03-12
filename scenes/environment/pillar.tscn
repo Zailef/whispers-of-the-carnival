@@ -1,5 +1,5 @@
-[gd_scene load_steps=2 format=3 uid="uid://bv7m31qxnkc6"]
+[gd_scene format=3 uid="uid://bv7m31qxnkc6"]
 
 [ext_resource type="PackedScene" uid="uid://b6lhntd5q03nu" path="res://models/environment/pillar.glb" id="1_sp44i"]
 
-[node name="Pillar" instance=ExtResource("1_sp44i")]
+[node name="Pillar" unique_id=978898905 instance=ExtResource("1_sp44i")]

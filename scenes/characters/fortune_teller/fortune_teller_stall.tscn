@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bfxv7q2n336i5"]
+[gd_scene format=3 uid="uid://bfxv7q2n336i5"]
 
 [ext_resource type="PackedScene" uid="uid://c46xaikra54ku" path="res://models/characters/fortune_teller/Fortune.teller.tent.glb" id="1_vwkpp"]
 [ext_resource type="PackedScene" uid="uid://f1n4bef1u22x" path="res://models/characters/fortune_teller/fortune.teller.sign.glb" id="2_q7pvc"]
-[ext_resource type="Script" path="res://scenes/characters/fortune_teller/fortune_teller_stall.gd" id="2_xqwe8"]
+[ext_resource type="Script" uid="uid://uspviwdgiveo" path="res://scenes/characters/fortune_teller/fortune_teller_stall.gd" id="2_xqwe8"]
 [ext_resource type="PackedScene" uid="uid://c0ffma0ehkl8j" path="res://models/characters/fortune_teller/Fortune.teller.ani.glb" id="3_0nbns"]
 [ext_resource type="PackedScene" uid="uid://2isfaa6wkaj8" path="res://scenes/common/interaction_handler.tscn" id="4_qavpu"]
 [ext_resource type="AudioStream" uid="uid://uxnk6ttny0nr" path="res://audio/characters/fortune_teller/monologue.mp3" id="6_2ihsi"]
@@ -13,49 +13,49 @@ size = Vector3(2.13727, 2.99164, 1.59192)
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_2bcdk"]
 radius = 1.8
 
-[node name="FortuneTeller" instance=ExtResource("1_vwkpp")]
+[node name="FortuneTeller" unique_id=1850727392 instance=ExtResource("1_vwkpp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0954294, 0)
 script = ExtResource("2_xqwe8")
 
-[node name="Fortune_teller_tent" parent="." index="0"]
+[node name="Fortune_teller_tent" parent="." index="0" unique_id=1164128607]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0144401, 0.451234)
 
-[node name="FortuneTellerSign" parent="." index="1" instance=ExtResource("2_q7pvc")]
+[node name="FortuneTellerSign" parent="." index="1" unique_id=1577963149 instance=ExtResource("2_q7pvc")]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -4, 0, 1)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="FortuneTellerSign" index="1"]
+[node name="StaticBody3D" type="StaticBody3D" parent="FortuneTellerSign" index="1" unique_id=1828731466]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FortuneTellerSign/StaticBody3D" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FortuneTellerSign/StaticBody3D" index="0" unique_id=603631530]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0662544, 1.47379, 0.29596)
 shape = SubResource("BoxShape3D_7345m")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="FortuneTellerSign" index="2"]
+[node name="SpotLight3D" type="SpotLight3D" parent="FortuneTellerSign" index="2" unique_id=110522016]
 transform = Transform3D(0.998078, 0.0619547, 0.00162512, -0.061941, 0.996292, 0.0597191, 0.0020808, -0.059705, 0.998214, 0.069226, 1.5955, 4.42908)
 light_energy = 50.0
 spot_range = 10.0
 spot_angle = 20.0
 
-[node name="FortuneTellerCharacter" parent="." index="2" instance=ExtResource("3_0nbns")]
+[node name="FortuneTellerCharacter" parent="." index="2" unique_id=827299350 instance=ExtResource("3_0nbns")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.681009, 0)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="." index="3"]
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="3" unique_id=102817262]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.96408, 1.75853)
 light_color = Color(0.511499, 0.555899, 0.667636, 1)
 light_energy = 10.0
 
-[node name="InteractionHandler" parent="." index="4" node_paths=PackedStringArray("interaction_label") instance=ExtResource("4_qavpu")]
+[node name="InteractionHandler" parent="." index="4" unique_id=1666981511 node_paths=PackedStringArray("interaction_label") instance=ExtResource("4_qavpu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.866393, 1.93881)
 interaction_label = NodePath("Label3D")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionHandler" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionHandler" index="0" unique_id=759215253]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0150933, 2.5803, 0)
 shape = SubResource("CylinderShape3D_2bcdk")
 
-[node name="Label3D" type="Label3D" parent="InteractionHandler" index="1"]
+[node name="Label3D" type="Label3D" parent="InteractionHandler" index="1" unique_id=1721629158]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.39539, 0.05527)
 text = "Talk [E]"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="5"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="5" unique_id=1462050661]
 stream = ExtResource("6_2ihsi")
 volume_db = 4.0
 bus = &"SFX"

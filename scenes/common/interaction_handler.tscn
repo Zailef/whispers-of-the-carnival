@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://2isfaa6wkaj8"]
+[gd_scene format=3 uid="uid://2isfaa6wkaj8"]
 
-[ext_resource type="Script" path="res://scenes/common/interaction_handler.gd" id="1_w7rrm"]
+[ext_resource type="Script" uid="uid://om37h1qneb26" path="res://scenes/common/interaction_handler.gd" id="1_w7rrm"]
 
-[node name="InteractionHandler" type="Area3D"]
+[node name="InteractionHandler" type="Area3D" unique_id=5792023]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_w7rrm")

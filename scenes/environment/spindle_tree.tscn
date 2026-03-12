@@ -1,13 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://doybmfx3322r0"]
+[gd_scene format=3 uid="uid://doybmfx3322r0"]
 
 [ext_resource type="PackedScene" uid="uid://c7bet37gnnjrd" path="res://models/environment/spindle_tree.glb" id="1_g8pyy"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6jc6g"]
 points = PackedVector3Array(1.89461, 3.98999, 1.18861, 0.247583, -0.041317, -0.165777, 1.81973, 3.33821, -1.26546, -0.931171, 3.49579, 1.17121, -2.1104, 4.12462, -2.52361, -1.63861, 4.98932, -1.73726, -0.2242, -0.041317, 0.148761, -1.94131, 4.25878, 0.413081, 1.34794, 4.36, 1.48575, -2.18879, 3.49579, -2.36634, 1.66246, 3.80995, -1.10819, 1.66246, 3.80995, 1.56458, 1.97699, 2.94525, -0.557948, -2.26813, 4.98932, -1.18702, -1.95313, 3.88874, 0.542133, 1.73487, 4.36166, 1.10642, -2.66057, 4.20291, -1.42273, 1.89859, 3.57408, 1.25004, 1.81973, 3.18113, -1.26546, -0.0669389, -0.041317, 0.227596, -1.65016, 4.34326, 0.567466, -2.50378, 3.88874, -2.36634, -2.34894, 4.82165, -1.91849, 0.011457, -0.041317, -0.244211, -2.032, 3.49579, -2.36634, 1.42681, 3.73117, 1.56458, 1.93008, 3.59103, -0.851874, -1.79587, 4.67466, -2.13024, -1.58475, 4.50772, 0.348955, -0.2242, -0.041317, -0.0869422, 1.34794, 4.43878, 1.17121, -2.64391, 4.51092, -1.61123)
 
-[node name="SpindleTree" instance=ExtResource("1_g8pyy")]
+[node name="SpindleTree" unique_id=9495540 instance=ExtResource("1_g8pyy")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="tree_1" index="0"]
+[node name="StaticBody3D" type="StaticBody3D" parent="tree_1" parent_id_path=PackedInt32Array(1318438301) index="0" unique_id=1787788763]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="tree_1/StaticBody3D" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tree_1/StaticBody3D" index="0" unique_id=408985949]
 shape = SubResource("ConvexPolygonShape3D_6jc6g")

@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://cxqi541f2ccls"]
+[gd_scene format=3 uid="uid://cxqi541f2ccls"]
 
-[ext_resource type="Script" path="res://scenes/pickups/major_arcana_card.gd" id="1_eqlgg"]
-[ext_resource type="Shader" path="res://shaders/2d_highlight.gdshader" id="2_pwe1t"]
+[ext_resource type="Script" uid="uid://bsi2es6tsqbfr" path="res://scenes/pickups/major_arcana_card.gd" id="1_eqlgg"]
+[ext_resource type="Shader" uid="uid://8kw0k53xkfv5" path="res://shaders/2d_highlight.gdshader" id="2_pwe1t"]
 [ext_resource type="AudioStream" uid="uid://cea18iwyj46re" path="res://audio/characters/musician/xylophone/A4.wav" id="3_0jp4y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_um0fi"]
@@ -81,19 +81,19 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wxfnk"]
 _data = {
-"RESET": SubResource("Animation_hpt2e"),
-"fade_out": SubResource("Animation_w2rjr"),
-"spin": SubResource("Animation_swgx2")
+&"RESET": SubResource("Animation_hpt2e"),
+&"fade_out": SubResource("Animation_w2rjr"),
+&"spin": SubResource("Animation_swgx2")
 }
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_uc7a1"]
 radius = 0.25
 
-[node name="MajorArcanaCard" type="Node3D"]
+[node name="MajorArcanaCard" type="Node3D" unique_id=2104826523]
 transform = Transform3D(6, 0, 1.04907e-06, 0, 6, 0, -1.04907e-06, 0, 6, 0, 0, 0)
 script = ExtResource("1_eqlgg")
 
-[node name="CardModel" type="CSGBox3D" parent="."]
+[node name="CardModel" type="CSGBox3D" parent="." unique_id=1927023646]
 transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0, 0, 0)
 layers = 2
 material_overlay = SubResource("ShaderMaterial_um0fi")
@@ -101,18 +101,16 @@ cast_shadow = 0
 size = Vector3(0.1, 0.175, 0.001)
 material = SubResource("StandardMaterial3D_5k4pq")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_wxfnk")
-}
-autoplay = "spin"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1873036757]
+libraries/ = SubResource("AnimationLibrary_wxfnk")
+autoplay = &"spin"
 
-[node name="PickupArea" type="Area3D" parent="."]
+[node name="PickupArea" type="Area3D" parent="." unique_id=875003810]
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PickupArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickupArea" unique_id=1408664469]
 shape = SubResource("SphereShape3D_uc7a1")
 
-[node name="PickupSound" type="AudioStreamPlayer" parent="."]
+[node name="PickupSound" type="AudioStreamPlayer" parent="." unique_id=392245025]
 stream = ExtResource("3_0jp4y")

@@ -1,35 +1,35 @@
-[gd_scene load_steps=2 format=3 uid="uid://ivnbbh3pbbs2"]
+[gd_scene format=3 uid="uid://ivnbbh3pbbs2"]
 
 [ext_resource type="PackedScene" uid="uid://t4tdj4q466kx" path="res://scenes/environment/platforms/fade_platform.tscn" id="1_l3tox"]
 
-[node name="TarotStaircase" type="Node3D"]
+[node name="TarotStaircase" type="Node3D" unique_id=626402119]
 
-[node name="FadePlatform" parent="." instance=ExtResource("1_l3tox")]
+[node name="FadePlatform" parent="." unique_id=572379744 instance=ExtResource("1_l3tox")]
 transform = Transform3D(-6.74242e-08, 0, -1.50697, 0, 1, 0, 1.54249, 0, -6.58716e-08, 0, 0, 0)
 
-[node name="FadePlatform2" parent="." instance=ExtResource("1_l3tox")]
+[node name="FadePlatform2" parent="." unique_id=19883517 instance=ExtResource("1_l3tox")]
 transform = Transform3D(-1.13815, 0, -1.01712, 0, 1, 0, 1.0411, 0, -1.11194, 5.9271, 0.36006, 0)
 
-[node name="FadePlatform3" parent="." instance=ExtResource("1_l3tox")]
+[node name="FadePlatform3" parent="." unique_id=735433722 instance=ExtResource("1_l3tox")]
 transform = Transform3D(-1.53006, 0, -0.190856, 0, 1, 0, 0.195354, 0, -1.49483, 9.65363, 1.24561, 4.02794)
 
-[node name="FadePlatform4" parent="." instance=ExtResource("1_l3tox")]
+[node name="FadePlatform4" parent="." unique_id=1085616136 instance=ExtResource("1_l3tox")]
 transform = Transform3D(-1.24342, 0, 0.891762, 0, 1, 0, -0.912781, 0, -1.21479, 9.65363, 2.29473, 9.61974)
 
-[node name="FadePlatform5" parent="." instance=ExtResource("1_l3tox")]
+[node name="FadePlatform5" parent="." unique_id=1021341510 instance=ExtResource("1_l3tox")]
 transform = Transform3D(-0.44392, 0, 1.44321, 0, 1, 0, -1.47723, 0, -0.433697, 6.39249, 2.66573, 14.0549)
 
-[node name="FadePlatform6" parent="." instance=ExtResource("1_l3tox")]
+[node name="FadePlatform6" parent="." unique_id=1515298778 instance=ExtResource("1_l3tox")]
 transform = Transform3D(0.526878, 0, 1.41633, 0, 1, 0, -1.44971, 0, 0.514745, 1.0877, 3.21588, 15.6637)
 
-[node name="FadePlatform7" parent="." instance=ExtResource("1_l3tox")]
+[node name="FadePlatform7" parent="." unique_id=1096108685 instance=ExtResource("1_l3tox")]
 transform = Transform3D(0.526878, 0, 1.41633, 0, 1, 0, -1.44971, 0, 0.514745, -8.32889, 3.21588, 11.9484)
 
-[node name="FadePlatform8" parent="." instance=ExtResource("1_l3tox")]
+[node name="FadePlatform8" parent="." unique_id=1434708106 instance=ExtResource("1_l3tox")]
 transform = Transform3D(1.29599, 0.406416, -0.541032, -0.672568, 0.899931, -0.00253446, 0.497313, 0.157957, 1.40649, -15.3731, 3.88221, 9.74903)
 
-[node name="FadePlatform9" parent="." instance=ExtResource("1_l3tox")]
+[node name="FadePlatform9" parent="." unique_id=815506811 instance=ExtResource("1_l3tox")]
 transform = Transform3D(-0.484113, -0.017838, -1.43057, -0.0383411, 0.999635, -0.0159223, 1.46404, 0.0202805, -0.473461, -19.8995, 5.72832, 3.54032)
 
-[node name="FadePlatform10" parent="." instance=ExtResource("1_l3tox")]
+[node name="FadePlatform10" parent="." unique_id=1668536971 instance=ExtResource("1_l3tox")]
 transform = Transform3D(-1.52875, -0.017838, 0.198846, -0.0231396, 0.999635, 0.0338463, -0.204077, 0.0202805, -1.49341, -15.4404, 6.60215, -3.51672)

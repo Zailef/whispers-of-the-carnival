@@ -10,9 +10,9 @@ config_version=5
 
 [application]
 
-config/name="GameOff2024"
+config/name="Whispers of the Carnival"
 run/main_scene="res://scenes/menus/main_menu/main_menu.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+config/features=PackedStringArray("4.6", "GL Compatibility")
 
 [autoload]
 

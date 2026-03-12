@@ -1,14 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2yish6ulxay3"]
+[gd_scene format=3 uid="uid://d2yish6ulxay3"]
 
 [ext_resource type="PackedScene" uid="uid://b5rytxfwbcp13" path="res://models/environment/spooky_tree.glb" id="1_wyhpn"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_608vn"]
 points = PackedVector3Array(-4.36123, 5.71568, -0.443067, -4.36123, 5.71568, -0.222194, -1.59992, -0.800403, 0.550356, 0.277536, 3.17415, -1.32723, 1.05057, 2.84271, 2.0968, -0.0342084, -0.723747, -0.711414, -1.81993, -0.468959, -0.443067, 0.498635, 4.16848, -1.10602, 0.517872, -0.770798, 0.120573, 0.830014, 2.07188, 2.0968, -3.47683, 6.04713, 0.109282, 0.830014, 3.50629, 1.87559, 0.167257, -0.800403, 0.771228, -4.13959, 5.8257, -0.00132191, -1.93021, -0.690383, 0.330154, 0.514852, -0.766117, -0.196488, -0.585834, -0.52942, -0.781275, -1.59992, -0.468959, 0.660625, -4.13959, 6.04713, -0.443067, 1.05057, 3.17415, 1.65472, 0.277536, 4.05846, -1.32723, -0.85853, -0.877116, -0.409172, 0.719194, 3.39627, 1.98619, -1.04798, -0.800403, 0.771228, 0.167257, 3.17415, -1.32723, -1.93021, -0.579671, -0.222194, 0.277536, 4.27989, -0.885146, -3.58711, 6.04713, -0.222194, 0.108444, -0.904197, -0.308916, -3.80821, 6.04713, 0.109282, 0.396377, -0.744281, -0.402727, 0.830014, 2.51265, 2.0968)
 
-[node name="SpookyTree" instance=ExtResource("1_wyhpn")]
+[node name="SpookyTree" unique_id=1997733786 instance=ExtResource("1_wyhpn")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SpookyTree" index="0"]
+[node name="StaticBody3D" type="StaticBody3D" parent="SpookyTree" parent_id_path=PackedInt32Array(407266059) index="0" unique_id=274682965]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SpookyTree/StaticBody3D" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpookyTree/StaticBody3D" index="0" unique_id=210326701]
 shape = SubResource("ConvexPolygonShape3D_608vn")

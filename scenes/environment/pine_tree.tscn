@@ -1,5 +1,5 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkwwkk8mdm2au"]
+[gd_scene format=3 uid="uid://dkwwkk8mdm2au"]
 
 [ext_resource type="PackedScene" uid="uid://c2cbrdxgw6yei" path="res://models/environment/pine_tree.glb" id="1_sfyhp"]
 
-[node name="PineTree" instance=ExtResource("1_sfyhp")]
+[node name="PineTree" unique_id=679159278 instance=ExtResource("1_sfyhp")]

@@ -1,16 +1,16 @@
-[gd_scene load_steps=20 format=3 uid="uid://drbrebgd4gd5n"]
+[gd_scene format=3 uid="uid://drbrebgd4gd5n"]
 
-[ext_resource type="Script" path="res://scenes/characters/musician/musician_stall.gd" id="1_wacb7"]
+[ext_resource type="Script" uid="uid://n5t47c22scie" path="res://scenes/characters/musician/musician_stall.gd" id="1_wacb7"]
 [ext_resource type="PackedScene" uid="uid://2isfaa6wkaj8" path="res://scenes/common/interaction_handler.tscn" id="2_bj52x"]
-[ext_resource type="Script" path="res://scenes/characters/musician/xylophone_memory_game.gd" id="4_m7olm"]
-[ext_resource type="Script" path="res://scenes/characters/musician/memory_game_state_machine.gd" id="5_xh75u"]
-[ext_resource type="Script" path="res://scenes/characters/musician/show_sequence_state.gd" id="6_y2n5o"]
-[ext_resource type="Script" path="res://scenes/characters/musician/player_input_state.gd" id="7_nuhq3"]
-[ext_resource type="Script" path="res://scenes/characters/musician/result_state.gd" id="8_ukxcx"]
-[ext_resource type="Script" path="res://scenes/characters/musician/idle_state.gd" id="9_07mrm"]
+[ext_resource type="Script" uid="uid://fvjdh073ryv0" path="res://scenes/characters/musician/xylophone_memory_game.gd" id="4_m7olm"]
+[ext_resource type="Script" uid="uid://duhv5t1p5hvq3" path="res://scenes/characters/musician/memory_game_state_machine.gd" id="5_xh75u"]
+[ext_resource type="Script" uid="uid://2y7gomt7xhsj" path="res://scenes/characters/musician/show_sequence_state.gd" id="6_y2n5o"]
+[ext_resource type="Script" uid="uid://e3qj8eejcqh0" path="res://scenes/characters/musician/player_input_state.gd" id="7_nuhq3"]
+[ext_resource type="Script" uid="uid://b2at54tqqtw2q" path="res://scenes/characters/musician/result_state.gd" id="8_ukxcx"]
+[ext_resource type="Script" uid="uid://cs0rhwb016uup" path="res://scenes/characters/musician/idle_state.gd" id="9_07mrm"]
 [ext_resource type="PackedScene" uid="uid://ctb7kh77do0es" path="res://scenes/characters/musician/xylophone.tscn" id="9_qip7a"]
 [ext_resource type="AudioStream" uid="uid://ccow570biiwcu" path="res://audio/music/Darkest Child.mp3" id="13_60qev"]
-[ext_resource type="Script" path="res://scenes/characters/musician/level_music_player.gd" id="14_hdkqo"]
+[ext_resource type="Script" uid="uid://v3i2qcxa7kfi" path="res://scenes/characters/musician/level_music_player.gd" id="14_hdkqo"]
 [ext_resource type="AudioStream" uid="uid://n7424qrc6w5p" path="res://audio/music/Vanishing.mp3" id="15_q7nm6"]
 [ext_resource type="AudioStream" uid="uid://de8fvu07vwjbr" path="res://audio/music/Blue Feather.mp3" id="16_vch86"]
 [ext_resource type="PackedScene" uid="uid://bg4gi7b4k2cq0" path="res://scenes/characters/musician/musician_stage.tscn" id="16_vffei"]
@@ -24,69 +24,69 @@ radius = 1.8
 [sub_resource type="BoxShape3D" id="BoxShape3D_rohji"]
 size = Vector3(12, 2, 5)
 
-[node name="MusicianStall" type="Node3D"]
+[node name="MusicianStall" type="Node3D" unique_id=1108367584]
 script = ExtResource("1_wacb7")
 
-[node name="XylophoneMemoryGame" type="Node3D" parent="." node_paths=PackedStringArray("musician_character")]
+[node name="XylophoneMemoryGame" type="Node3D" parent="." unique_id=449280775 node_paths=PackedStringArray("musician_character")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.159552, -1.30918, 1.0197)
 script = ExtResource("4_m7olm")
 musician_character = NodePath("../MusicianCharacter")
 
-[node name="MemoryGameStateMachine" type="Node" parent="XylophoneMemoryGame" node_paths=PackedStringArray("owner_node", "initial_state")]
+[node name="MemoryGameStateMachine" type="Node" parent="XylophoneMemoryGame" unique_id=778814830 node_paths=PackedStringArray("owner_node", "initial_state")]
 script = ExtResource("5_xh75u")
 owner_node = NodePath("..")
 initial_state = NodePath("IdleState")
 
-[node name="ShowSequenceState" type="Node" parent="XylophoneMemoryGame/MemoryGameStateMachine"]
+[node name="ShowSequenceState" type="Node" parent="XylophoneMemoryGame/MemoryGameStateMachine" unique_id=1651962874]
 script = ExtResource("6_y2n5o")
 
-[node name="PlayerInputState" type="Node" parent="XylophoneMemoryGame/MemoryGameStateMachine"]
+[node name="PlayerInputState" type="Node" parent="XylophoneMemoryGame/MemoryGameStateMachine" unique_id=53287381]
 script = ExtResource("7_nuhq3")
 
-[node name="ResultState" type="Node" parent="XylophoneMemoryGame/MemoryGameStateMachine"]
+[node name="ResultState" type="Node" parent="XylophoneMemoryGame/MemoryGameStateMachine" unique_id=1563187602]
 script = ExtResource("8_ukxcx")
 
-[node name="IdleState" type="Node" parent="XylophoneMemoryGame/MemoryGameStateMachine"]
+[node name="IdleState" type="Node" parent="XylophoneMemoryGame/MemoryGameStateMachine" unique_id=1721050624]
 script = ExtResource("9_07mrm")
 
-[node name="Xylophone" parent="XylophoneMemoryGame" instance=ExtResource("9_qip7a")]
+[node name="Xylophone" parent="XylophoneMemoryGame" unique_id=1715274182 instance=ExtResource("9_qip7a")]
 transform = Transform3D(1, 0, 0, 0, 0.894256, -0.447556, 0, 0.447556, 0.894256, 0, 1.2022, 1.05728)
 
-[node name="FailureSound" type="AudioStreamPlayer" parent="XylophoneMemoryGame"]
+[node name="FailureSound" type="AudioStreamPlayer" parent="XylophoneMemoryGame" unique_id=667775305]
 stream = ExtResource("18_sa6he")
 volume_db = 10.0
 bus = &"SFX"
 
-[node name="SuccessSound" type="AudioStreamPlayer" parent="XylophoneMemoryGame"]
+[node name="SuccessSound" type="AudioStreamPlayer" parent="XylophoneMemoryGame" unique_id=813593627]
 stream = ExtResource("19_223te")
 volume_db = 14.0
 bus = &"SFX"
 
-[node name="MiniGameCamera" type="Camera3D" parent="XylophoneMemoryGame"]
+[node name="MiniGameCamera" type="Camera3D" parent="XylophoneMemoryGame" unique_id=1712200702]
 transform = Transform3D(1, 0, 0, 0, 0.998863, 0.0476643, 0, -0.0476643, 0.998863, 0, 2.16019, 3.05758)
 
-[node name="InteractionHandler" parent="XylophoneMemoryGame" node_paths=PackedStringArray("interaction_label") instance=ExtResource("2_bj52x")]
+[node name="InteractionHandler" parent="XylophoneMemoryGame" unique_id=647796023 node_paths=PackedStringArray("interaction_label") instance=ExtResource("2_bj52x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.866393, 1.93881)
 interaction_label = NodePath("Label3D")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="XylophoneMemoryGame/InteractionHandler"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XylophoneMemoryGame/InteractionHandler" unique_id=1736106390]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0150933, 2.5803, 0)
 shape = SubResource("CylinderShape3D_lym20")
 
-[node name="Label3D" type="Label3D" parent="XylophoneMemoryGame/InteractionHandler"]
+[node name="Label3D" type="Label3D" parent="XylophoneMemoryGame/InteractionHandler" unique_id=30241296]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.59766, -1.32571)
 text = "Play [E]"
 
-[node name="PlayerDiscoveryArea" type="Area3D" parent="."]
+[node name="PlayerDiscoveryArea" type="Area3D" parent="." unique_id=268181247]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.09033, 0, 0)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDiscoveryArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDiscoveryArea" unique_id=494509964]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.98666, 0.874247, 3.92065)
 shape = SubResource("BoxShape3D_rohji")
 
-[node name="LevelMusicPlayer" type="AudioStreamPlayer3D" parent="."]
+[node name="LevelMusicPlayer" type="AudioStreamPlayer3D" parent="." unique_id=1466637163]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.78523, 1.87258, -1.22956)
 stream = ExtResource("13_60qev")
 volume_db = 1.0
@@ -95,15 +95,15 @@ bus = &"Music"
 script = ExtResource("14_hdkqo")
 tracks = Array[AudioStream]([ExtResource("13_60qev"), ExtResource("15_q7nm6"), ExtResource("16_vch86")])
 
-[node name="MusicianStage" parent="." instance=ExtResource("16_vffei")]
+[node name="MusicianStage" parent="." unique_id=595301438 instance=ExtResource("16_vffei")]
 
-[node name="MusicianCharacter" parent="." instance=ExtResource("17_oa5uc")]
+[node name="MusicianCharacter" parent="." unique_id=1395593833 instance=ExtResource("17_oa5uc")]
 
-[node name="PrizeOneWinLocation" type="Marker3D" parent="."]
+[node name="PrizeOneWinLocation" type="Marker3D" parent="." unique_id=1623201646]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.97978, -0.229321, 2.22578)
 
-[node name="PrizeTwoWinLocation" type="Marker3D" parent="."]
+[node name="PrizeTwoWinLocation" type="Marker3D" parent="." unique_id=1938356200]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.43325, -0.229321, 2.22578)
 
-[node name="PrizeThreeWinLocation" type="Marker3D" parent="."]
+[node name="PrizeThreeWinLocation" type="Marker3D" parent="." unique_id=1862724103]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.61693, -0.229321, 2.22578)

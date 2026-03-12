@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8vy7q1512jol"]
+[gd_scene format=3 uid="uid://c8vy7q1512jol"]
 
 [ext_resource type="Theme" uid="uid://py30wmqswq1f" path="res://menu_theme.tres" id="1_kv04n"]
-[ext_resource type="Script" path="res://scenes/menus/main_menu/main_menu.gd" id="1_vumqw"]
+[ext_resource type="Script" uid="uid://buhdqu5hodsdq" path="res://scenes/menus/main_menu/main_menu.gd" id="1_vumqw"]
 [ext_resource type="LabelSettings" uid="uid://b6q4cwq5qro1g" path="res://scenes/menus/title_label.tres" id="3_hkppo"]
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" unique_id=996542615]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,7 +14,7 @@ grow_vertical = 2
 theme = ExtResource("1_kv04n")
 script = ExtResource("1_vumqw")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1695500069]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,7 +23,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.772549, 0, 0.333333, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1451833872]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,34 +35,34 @@ theme_override_constants/margin_top = 100
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 100
 
-[node name="TitleLabel" type="Label" parent="MarginContainer"]
+[node name="TitleLabel" type="Label" parent="MarginContainer" unique_id=1651248168]
 layout_mode = 2
 size_flags_vertical = 0
 text = "Whispers of the Carnival"
 label_settings = ExtResource("3_hkppo")
 horizontal_alignment = 1
 
-[node name="ButtonContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="ButtonContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1484661501]
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="PlayButton" type="Button" parent="MarginContainer/ButtonContainer"]
+[node name="PlayButton" type="Button" parent="MarginContainer/ButtonContainer" unique_id=1700802061]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Play"
 
-[node name="SettingsButton" type="Button" parent="MarginContainer/ButtonContainer"]
+[node name="SettingsButton" type="Button" parent="MarginContainer/ButtonContainer" unique_id=497360778]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Settings"
 
-[node name="CreditsButton" type="Button" parent="MarginContainer/ButtonContainer"]
+[node name="CreditsButton" type="Button" parent="MarginContainer/ButtonContainer" unique_id=1982875960]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Credits"
 
-[node name="QuitButton" type="Button" parent="MarginContainer/ButtonContainer"]
+[node name="QuitButton" type="Button" parent="MarginContainer/ButtonContainer" unique_id=1851284279]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Quit"

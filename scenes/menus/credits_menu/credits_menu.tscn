@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtmgd5f8ihand"]
+[gd_scene format=3 uid="uid://dtmgd5f8ihand"]
 
-[ext_resource type="Script" path="res://scenes/menus/credits_menu/credits_menu.gd" id="1_e0lj3"]
+[ext_resource type="Script" uid="uid://da82nhi45coab" path="res://scenes/menus/credits_menu/credits_menu.gd" id="1_e0lj3"]
 [ext_resource type="LabelSettings" uid="uid://b6q4cwq5qro1g" path="res://scenes/menus/title_label.tres" id="2_lcxtp"]
 
-[node name="CreditsMenu" type="Control"]
+[node name="CreditsMenu" type="Control" unique_id=1792023875]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e0lj3")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=340891438]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,7 +21,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.772549, 0, 0.333333, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=881771586]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,19 +33,19 @@ theme_override_constants/margin_top = 100
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 100
 
-[node name="Credits" type="Label" parent="MarginContainer"]
+[node name="Credits" type="Label" parent="MarginContainer" unique_id=274087957]
 layout_mode = 2
 size_flags_vertical = 0
 text = "Credits"
 label_settings = ExtResource("2_lcxtp")
 horizontal_alignment = 1
 
-[node name="CreditsContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="CreditsContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1504986465]
 layout_mode = 2
 size_flags_vertical = 4
 alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer/CreditsContainer"]
+[node name="Label" type="Label" parent="MarginContainer/CreditsContainer" unique_id=1518633030]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Tom Phillips - Game design, programming, sfx, art
@@ -54,7 +54,7 @@ Liss Long - Game design, voice acting
 
 Matt Phillips - Game design, art"
 
-[node name="BackButton" type="Button" parent="MarginContainer"]
+[node name="BackButton" type="Button" parent="MarginContainer" unique_id=321414598]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 8
