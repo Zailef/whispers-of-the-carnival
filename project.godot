@@ -24,6 +24,10 @@ MenuMusicPlayer="*res://autoloads/menu_music_player.tscn"
 
 window/stretch/mode="canvas_items"
 
+[dotnet]
+
+project/assembly_name="Whispers of the Carnival"
+
 [global_group]
 
 player=""

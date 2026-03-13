@@ -73,6 +73,81 @@ shader_parameter/intensity = 1.0
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_t2bme"]
 height = 1.5
 
+[sub_resource type="AnimationNodeAnimation" id="ANA_slipping"]
+animation = &"Slipping"
+
+[sub_resource type="AnimationNodeAnimation" id="ANA_falling"]
+animation = &"falling"
+
+[sub_resource type="AnimationNodeAnimation" id="ANA_jump"]
+animation = &"jump"
+
+[sub_resource type="AnimationNodeAnimation" id="ANA_rest"]
+animation = &"rest"
+
+[sub_resource type="AnimationNodeAnimation" id="ANA_run"]
+animation = &"run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="ANT_start_rest"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="ANT_rest_run"]
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="ANT_run_rest"]
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="ANT_rest_jump"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="ANT_run_jump"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="ANT_jump_falling"]
+xfade_time = 0.15
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="ANT_falling_rest"]
+xfade_time = 0.25
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="ANT_falling_run"]
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="ANT_jump_rest"]
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="ANT_jump_run"]
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="ANT_rest_falling"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="ANT_run_falling"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="ANT_run_slip"]
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="ANT_slip_run"]
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="ANT_slip_rest"]
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="ANT_rest_slip"]
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachine" id="ANSM_player"]
+states/Slipping/node = SubResource("ANA_slipping")
+states/Slipping/position = Vector2(250, 350)
+states/falling/node = SubResource("ANA_falling")
+states/falling/position = Vector2(500, 250)
+states/jump/node = SubResource("ANA_jump")
+states/jump/position = Vector2(500, 50)
+states/rest/node = SubResource("ANA_rest")
+states/rest/position = Vector2(0, 150)
+states/run/node = SubResource("ANA_run")
+states/run/position = Vector2(250, 150)
+transitions = ["Start", "rest", SubResource("ANT_start_rest"), "rest", "run", SubResource("ANT_rest_run"), "run", "rest", SubResource("ANT_run_rest"), "rest", "jump", SubResource("ANT_rest_jump"), "run", "jump", SubResource("ANT_run_jump"), "jump", "falling", SubResource("ANT_jump_falling"), "falling", "rest", SubResource("ANT_falling_rest"), "falling", "run", SubResource("ANT_falling_run"), "jump", "rest", SubResource("ANT_jump_rest"), "jump", "run", SubResource("ANT_jump_run"), "rest", "falling", SubResource("ANT_rest_falling"), "run", "falling", SubResource("ANT_run_falling"), "run", "Slipping", SubResource("ANT_run_slip"), "Slipping", "run", SubResource("ANT_slip_run"), "Slipping", "rest", SubResource("ANT_slip_rest"), "rest", "Slipping", SubResource("ANT_rest_slip")]
+
 [node name="Player" type="CharacterBody3D" unique_id=1402975172]
 collision_layer = 2
 script = ExtResource("1_5m5gm")
@@ -176,3 +251,6 @@ script = ExtResource("8_qyltd")
 transform = Transform3D(-1, 0, -8.75443e-08, 0, 1, 0, 8.75443e-08, 0, -1, -0.000290542, -0.995044, 0.0166451)
 
 [node name="MusicPlayerTransform" type="RemoteTransform3D" parent="." unique_id=334578861]
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=556677889]
+tree_root = SubResource("ANSM_player")

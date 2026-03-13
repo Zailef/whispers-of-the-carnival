@@ -13,18 +13,26 @@ const MAJOR_ARCANA_CARD_COUNT: int = 22
 @onready var player_model_animated: Node3D = $PlayerModelAnimated
 @onready var music_player_remote_transform: RemoteTransform3D = $MusicPlayerTransform
 @onready var _camera_twist_pivot: Node3D = $CameraController/TwistPivot
-@onready var _animation_player: AnimationPlayer = $PlayerModelAnimated/AnimationPlayer
+@onready var _animation_tree: AnimationTree = $AnimationTree
 
 @export var look_at_decay: float = 10.0
 @export var coyote_time: float = 0.12
-@export var animation_blend_time: float = 0.15
 
+var _anim_playback: AnimationNodeStateMachinePlayback
 var _coyote_timer: float = 0.0
 
 @export var collected_cards: Array[String] = []
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+	var anim_player_node := player_model_animated.get_node("AnimationPlayer") as AnimationPlayer
+	_animation_tree.anim_player = _animation_tree.get_path_to(anim_player_node)
+	_animation_tree.active = true
+
+	await get_tree().process_frame
+
+	_anim_playback = _animation_tree["parameters/playback"]
 	play_animation("rest")
 
 	SignalManager.player_freeze_requested.connect(_on_player_freeze_requested)
@@ -57,11 +65,11 @@ func get_camera_relative_direction(input_dir: Vector2) -> Vector3:
 	return (_camera_twist_pivot.global_transform.basis * input_vector).normalized()
 
 func play_animation(anim_name: String) -> void:
-	if not _animation_player:
+	if not _anim_playback:
 		return
-	if _animation_player.current_animation == anim_name:
+	if _anim_playback.get_current_node() == anim_name:
 		return
-	_animation_player.play(anim_name, animation_blend_time)
+	_anim_playback.travel(anim_name)
 
 func rotate_model_toward(direction: Vector3, delta: float) -> void:
 	var flat_dir := Vector3(direction.x, 0.0, direction.z)
