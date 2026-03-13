@@ -74,11 +74,8 @@ shader_parameter/intensity = 1.0
 height = 1.5
 
 [node name="Player" type="CharacterBody3D" unique_id=1402975172]
-transform = Transform3D(0.999848, 0, 0.0174524, 0, 1, 0, -0.0174524, 0, 0.999848, 0, 1, 0)
 collision_layer = 2
 script = ExtResource("1_5m5gm")
-player_rotation_speed = null
-collected_cards = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2050946769]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)

@@ -2,11 +2,9 @@ extends BaseState
 class_name PlayerMoveState
 
 const SLIPPING_ANIMATION: String = "Slipping"
-const TURNING_ANIMATION: String = "turning"
 const RUN_ANIMATION: String = "run"
 
 var player_node: Player
-var animation_player: AnimationPlayer
 
 @export var move_speed: float = 5.0
 @export var backward_modifier: float = 0.5
@@ -16,7 +14,6 @@ var animation_player: AnimationPlayer
 var is_sprinting: bool = false
 var is_slipping: bool = false
 var is_moving_backward: bool = false
-var is_spot_turning: bool = false
 
 var direction: Vector3 = Vector3.ZERO
 var input_direction: Vector2 = Vector2.ZERO
@@ -39,12 +36,10 @@ func _ready() -> void:
 func enter() -> void:
 	super.enter()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	animation_player = player_node.player_model_animated.get_node("AnimationPlayer")
 
 func exit() -> void:
 	super.exit()
 	is_sprinting = false
-	animation_player.stop()
 
 func update(delta: float) -> void:
 	input_direction = Input.get_vector(
@@ -59,12 +54,13 @@ func update(delta: float) -> void:
 	handle_state_transitions()
 
 func handle_movement(delta: float) -> void:
-	# Only consider forward/backward movement
-	direction = (player_node.transform.basis * Vector3(0, 0, input_direction.y)).normalized()
+	direction = player_node.get_camera_relative_direction(input_direction)
 
 	is_sprinting = Input.is_action_pressed(ActionNames.SPRINT)
 	is_moving_backward = Input.is_action_pressed(ActionNames.MOVE_BACKWARDS)
-	is_spot_turning = false
+
+	if not player_node.is_on_floor():
+		player_node.velocity += player_node.get_gravity() * delta
 
 	if is_slipping:
 		player_node.velocity.x = lerp(player_node.velocity.x, direction.x * current_move_speed, 0.02)
@@ -77,22 +73,17 @@ func handle_movement(delta: float) -> void:
 			player_node.velocity.x = move_toward(player_node.velocity.x, 0, current_move_speed)
 			player_node.velocity.z = move_toward(player_node.velocity.z, 0, current_move_speed)
 
-	# Handle rotation based on left/right input
-	if input_direction.x != 0:
-		is_spot_turning = not is_slipping and player_node.velocity.length() == 0
-		var rotation_amount = input_direction.x * player_node.player_rotation_speed * delta
-		player_node.rotate_y(deg_to_rad(-rotation_amount))
+	if direction.length() > 0:
+		player_node.rotate_model_toward(direction, delta)
 
 func handle_animations() -> void:
-	if is_spot_turning and animation_player.current_animation != TURNING_ANIMATION:
-		animation_player.play(TURNING_ANIMATION)
-	elif is_slipping and animation_player.current_animation != SLIPPING_ANIMATION:
-		animation_player.play(SLIPPING_ANIMATION)
-	elif not is_spot_turning and not is_slipping and animation_player.current_animation != RUN_ANIMATION:
-		animation_player.play(RUN_ANIMATION)
+	if is_slipping:
+		player_node.play_animation(SLIPPING_ANIMATION)
+	else:
+		player_node.play_animation(RUN_ANIMATION)
 
 func handle_state_transitions() -> void:
-	if player_node.is_on_floor():
+	if player_node.is_effectively_on_floor():
 		if player_node.velocity.length() == 0 and input_direction.length() == 0:
 			player_node.state_machine.change_state(player_node.player_idle_state)
 		elif Input.is_action_just_pressed(ActionNames.JUMP):
